@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Praktikum2 Get</title>
+</head>
+<!--
+The class attribute specifies one or more classnames for an element.
+The class attribute is mostly used to point to a class in a style sheet. 
+However, it can also be used by a JavaScript (via the HTML DOM) to make changes to HTML elements with a specified class.
+
+The method attribute specifies how to send form-data 
+The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
+
+When you make a POST request, you have to encode the data that forms the body of the request in some way. 
+HTML forms provide three methods of encoding. 
+application x-www-form-urlencoded(default)
+multipart form-data
+text plain
+
+The action attribute specifies where to send the form-data when a form is submitted.
+(the form-data is sent to the page specified in the action attribute).
+
+The type attribute specifies the type of <input> element to display. text and submit
+
+The name attribute specifies the name of an anchor.
+The name attribute is used to create a bookmark inside a document.
+
+The <section> tag defines sections in a document, such as chapters, headers, footers, or any other sections of the document.
+
+The <fieldset> tag is used to group related elements in a form.
+The <fieldset> tag draws a box around the related elements.
+
+The placeholder attribute specifies a short hint that describes the expected value of an input field (e.g. a sample value or a short description of the expected format).
+The short hint is displayed in the input field before the user enters a value.
+Note: The placeholder attribute works with the following input types: text, search, url, tel, email, and password.
+
+The accept attribute specifies the types of files that the server accepts (that can be submitted through a file upload).
+Note: The accept attribute can only be used with <input type="file">.
+Tip: Do not use this attribute as a validation tool. File uploads should be validated on the server.
+
+The <label> tag defines a label for an <input> element.
+The <label> element does not render as anything special for the user. However, it provides a usability improvement for mouse users, because if the user clicks on the text within the <label> element, it toggles the control.
+The for attribute of the <label> tag should be equal to the id attribute of the related element to bind them together.
+
+The id attribute specifies a unique id for an HTML element (the value must be unique within the HTML document).
+The id attribute is most used to point to a style in a style sheet, and by JavaScript (via the HTML DOM) to manipulate the element with the specific id
+
+The value attribute specifies the value of an <input> element.
+The value attribute is used differently for different input types:
+For "button", "reset", and "submit" it defines the text on the button
+For "text", "password", and "hidden" it defines the initial (default) value of the input field
+For "checkbox", "radio", "image" it defines the value associated with the input (this is also the value that is sent on submit)
+
+Note: The value attribute cannot be used with <input type="file">.
+
+The <table> element represents a table
+
+The <caption> tag defines a table title.
+The <caption> tag must be inserted immediately after the <table> tag.
+
+tr represents a row
+th represents a header cell
+td represents a regular cell
+
+The colspan attribute defines the number of columns a cell should span.
+
+The <caption> tag defines a table caption.
+The <caption> tag must be inserted immediately after the <table> tag.
+
+The <area> tag defines an area inside an image-map (an image-map is an image with clickable areas).
+The <area> element is always nested inside a <map> tag.
+Note: The usemap attribute in the <img> tag is associated with the <map> element's name attribute, and creates a relationship between the image and the map.
+
+The <map> tag is used to define a client-side image-map. An image-map is an image with clickable areas.
+The required name attribute of the <map> element is associated with the <img>'s usemap attribute and creates a relationship between the image and the map.
+The <map> element contains a number of <area> elements, that defines the clickable areas in the image map.
+-->
+
+<body>
+<ul>
+  <li>
+    <a href="pealeht.html">Pealeht</a>
+  </li>
+  <li>
+    <a href="galerii.html">Galerii</a>
+  </li>
+</ul>
+
+<section class="sisselogimine">
+	<div class="login">
+		<h1>Sisselogimine</h1>
+			<form method="get" action="LoginSuccessful.html">
+				<p><input type="text" name="login" value="" placeholder="Username or Email"></p>
+				<p><input type="password" name="passwors" value="" placeholder="Password"></p>
+
+<select>
+  <option value="Mees">Mees</option>
+  <option value="Naine">Naine</option>
+  <option value="Other">Other :D</option>
+</select>		
+				
+<p class="remember_me">
+	<label>
+Salvesta andmed
+	<input type="checkbox" name="remember_me" id="remember_me">
+	</label>
+</p>
+	<p class="submit">
+	<p><input type="submit" name="commit" value="Login">
+</p>
+</form>
+</div>
+
+<div class="unustas">
+	<p>Unustasid parooli? <a href="ResetPassword.html">vajuta siia</a>.</p>
+</div>
+
+<div class="registreeri">
+	<p><a href="registreeri.html">Registreeri</a></p>
+</div>
+</section>
+
+<table border="1" style="width:10">
+	<caption>Pildi galerii</caption>
+		<tr>
+<td><map name="cat_burrito">
+		<area shape="rect" coords="0,0,150,150" href="Praktikum2_kodu_pilt1.html" alt="burrito">
+	</map>
+		<img src="./thumb/cat_burrito_resize.jpg" alt="cat1" usemap="#cat_burrito">
+</td>
+
+<td><map name="grumpy_cat">
+		<area shape="rect" coords="0,0,150,150" href="Praktikum2_kodu_pilt2.html" alt="grumpy">
+	</map>
+		<img src="./thumb/cat_grumpy_resize.jpg" alt="cat2" usemap="#grumpy_cat">
+</td>
+
+<td><map name="cat_mouth">
+		<area shape="rect" coords="0,0,250,250" href="Praktikum2_kodu_pilt3.html" alt="mouth">
+	</map>
+		<img src="./thumb/cat-mouth_resize.jpg" alt="cat3" usemap="#cat_mouth"></td>
+		</tr>
+</table>
+<br>
+
+<section class="yleslaadimine">
+<h3>Lae enda pilt:</h3>
+<fieldset>
+	<form method="get" action="baas.html" enctype="multipart/form-data">
+		<div class="yles">
+<table>
+<tr>
+	<td>Autor</td>
+	<td><input type="text" name="autor"></td>
+</tr>
+<tr>
+	<td>Pealkiri</td>
+	<td><input type="text" name="pealkiri"></td>
+</tr>
+<tr>
+	<td>Vaike Pilt</td>
+	<td><input type="file" name="vaike" accept="image/*"></td>
+</tr>
+<tr>
+	<td>Suur pilt</td>
+	<td><input type="file" name="suur" accept="image/*"></td>
+</tr>
+<tr>
+	<td colspan="2"><input type="submit" name="lae"></td>
+</tr>
+</table>
+</div>
+</form>
+</fieldset>
+</section>
+
+<p>
+	 <a href="http://validator.w3.org/check?uri=referer">
+	  <img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+</p>
+
+<p>	 
+	
+	<a href="Praktikum2_kodu_pilt1.html" target="frame">Leht1</a>
+	<a href="Praktikum2_kodu_pilt2.html" target="frame">Leht2</a>
+	<a href="Praktikum2_kodu_pilt3.html" target="frame">Leht3</a>
+	<a href="Praktikum2_kodu_post.html" target="frame">Leht4</a>
+	<a href="ResetPassword.html" target="frame">Leht5</a>
+	<a href="registreeri.html" target="frame">Leht6</a>
+	<a href="LoginSuccessful.html" target="frame">Leht7</a>
+	<a href="iframe.html" target="frame">Leht8</a>
+	<br />
+	<iframe name="frame" src="iframe.html" style="width:700px;height:500px"></iframe>
+
+</p>
+
+</body>
+
